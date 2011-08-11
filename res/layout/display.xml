@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:addStatesFromChildren="false" >
-<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="fill_parent" 
-    android:text="@string/hello" android:typeface="sans" android:textStyle="bold" android:gravity="center" android:id="@+id/txtDisplay" android:ellipsize="marquee"/>
-</LinearLayout>
+<FrameLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+    <com.androidbears.components.ScrollingTextView
+    android:id="@+id/txtDisplay" 
+    android:ellipsize="marquee" 
+    android:text="@string/hello" 
+    android:gravity="center" 
+    android:marqueeRepeatLimit="marquee_forever" 
+    android:layout_height="wrap_content" 
+    android:focusable="true" 
+    android:padding="5dip"
+    android:typeface="sans" 
+    android:maxLines="1" 
+    android:focusableInTouchMode="true" 
+    android:layout_width="wrap_content"/>
+</FrameLayout>
