@@ -1,15 +1,10 @@
 package com.pjbsoftware.android.CarMunicator;
 
-import com.pjbsoftware.android.CarMunicator.R;
-
 import android.app.Activity;
-import android.os.Bundle;
 import android.content.Intent;
-import android.widget.TextView;
-import com.androidbears.components.ScrollingTextView;
+import android.os.Bundle;
 
-import com.pjbsoftware.android.CarMunicator.MessageDBHelper;
-import com.pjbsoftware.android.CarMunicator.Message;
+import com.androidbears.components.ScrollingTextView;
 
 public class DisplayMessage extends Activity {
     /** Called when the activity is first created. */
@@ -37,9 +32,7 @@ public class DisplayMessage extends Activity {
     {
 	super.onResume();
 	ScrollingTextView myDisplay = (ScrollingTextView) findViewById(R.id.txtDisplay);
-	myDisplay.setEnabled(true);
-	boolean gotFocus = myDisplay.requestFocus();
-	
+	myDisplay.setEnabled(true);	
 	
     }
     
