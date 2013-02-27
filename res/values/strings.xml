@@ -2,12 +2,12 @@
 <resources>
     <string name="hello">Hello World, DisplayFlame!</string>
     <string name="app_name">CarMunicator</string>
-    <string name="preload1">You drive like my grandma!</string>
-    <string name="preload2">The pedal on the right is the one that makes the car go!</string>
-    <string name="preload3">That little lever on the steering column is the turn signal.</string>
-    <string name="preload4">55 -- it\'s not a good idea, it\'s just the law.</string>
-    <string name="preload5">Too bad mental handicaps don\'t qualify you for parking!</string>
-    <string name="preload6">Oh, now that I\'ve passed you -- NOW you find the gas pedal!</string>
+    <string name="preload1">Thanks</string>
+    <string name="preload2">Thank yoooo</string>
+    <string name="preload3">Signal</string>
+    <string name="preload4">Too Close</string>
+    <string name="preload5">Sorry!</string>
+    <string name="preload6">Now you find it!</string>
     <string name="strOK">OK</string>
     <string name="strCancel">Cancel</string>
 </resources>
