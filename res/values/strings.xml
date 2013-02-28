@@ -3,11 +3,11 @@
     <string name="hello">Hello World, DisplayFlame!</string>
     <string name="app_name">CarMunicator</string>
     <string name="preload1">Thanks</string>
-    <string name="preload2">Thank yoooo</string>
+    <string name="preload2">a</string>
     <string name="preload3">Signal</string>
-    <string name="preload4">Too Close</string>
+    <string name="preload4">b</string>
     <string name="preload5">Sorry!</string>
-    <string name="preload6">Now you find it!</string>
+    <string name="preload6">c</string>
     <string name="strOK">OK</string>
     <string name="strCancel">Cancel</string>
 </resources>
