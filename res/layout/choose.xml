@@ -4,8 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:layout_gravity="center"
-    android:stretchColumns="*"
-    android:useLargestChild="true" >
+    android:stretchColumns="*">
 
     <LinearLayout
         android:id="@+id/tableRow1"
@@ -13,7 +12,6 @@
         android:layout_height="fill_parent"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
-        android:useLargestChild="false"
         android:weightSum="2" >
 
         <Button
@@ -41,7 +39,6 @@
         android:layout_height="fill_parent"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
-        android:useLargestChild="false"
         android:weightSum="2" >
 
         <Button
@@ -69,7 +66,6 @@
         android:layout_height="fill_parent"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
-        android:useLargestChild="false"
         android:weightSum="2" >
 
         <Button

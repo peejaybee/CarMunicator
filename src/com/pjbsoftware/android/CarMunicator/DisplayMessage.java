@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.text.TextPaint;
+import android.util.TypedValue;
 import android.widget.TextView;
 
 import java.lang.String;
@@ -40,7 +41,6 @@ public class DisplayMessage extends Activity {
 	protected void onResume() {
 		super.onResume();
 		mDisplay = (TextView) findViewById(R.id.txtDisplay);
-//		mDisplay.setText(mWords[0]);
 		mDisplay.setEnabled(true);
 	}
 
@@ -60,6 +60,8 @@ public class DisplayMessage extends Activity {
 		float viewWidth = (float) view.getWidth();
 		float viewHeight = (float) view.getHeight();
 		
+		//See how big the box will be for each word -- scale so the box will fit
+		//Use the smallest scale factor for the whole message
 		for (int i = 0; i < words.length; i++){
 			viewPaint.getTextBounds(words[i],0, words[i].length(), box);
 			float sX = box.width();
@@ -68,7 +70,7 @@ public class DisplayMessage extends Activity {
 			newSize = Math.min(newSize,candidate);
 		}
 		
-		view.setTextSize(newSize);
+		view.setTextSize(TypedValue.COMPLEX_UNIT_PX,newSize);
 		
 	}
 	
