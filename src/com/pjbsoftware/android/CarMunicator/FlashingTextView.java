@@ -1,4 +1,4 @@
-package com.pjbsoftware.android.CarMunicator;
+/*package com.pjbsoftware.android.CarMunicator;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -23,3 +23,4 @@ public class FlashingTextView extends TextView {
 	}
 
 }
+*/
