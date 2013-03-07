@@ -1,4 +1,4 @@
-package com.pjbsoftware.android.CarMunicator;
+package com.pjbsoftware.android.CarMunicatorLibrary;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 import java.lang.String;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import com.pjbsoftware.android.CarMunicatorLibrary.R;
 
 public class DisplayMessage extends Activity {
 	
@@ -51,27 +53,42 @@ public class DisplayMessage extends Activity {
 	}
 
 	private void setTextSizeForMessage(TextView view, String[] words){
-		float currentSize = view.getTextSize();
-		float newSize = 20000F;
-		float candidate = 0;
+		float newSize = 2000;
+		float candidate;
 		
-		TextPaint viewPaint = view.getPaint();
-		Rect box = new Rect();
-		float viewWidth = (float) view.getWidth();
-		float viewHeight = (float) view.getHeight();
 		
-		//See how big the box will be for each word -- scale so the box will fit
+		//See how wide each word is, scale it to fit
 		//Use the smallest scale factor for the whole message
 		for (int i = 0; i < words.length; i++){
-			viewPaint.getTextBounds(words[i],0, words[i].length(), box);
-			float sX = box.width();
-			float sY = box.height();
-			candidate = currentSize * Math.min(viewWidth / sX, viewHeight / sY);
+			candidate = getMaximumTextSize(view,words[i]);
 			newSize = Math.min(newSize,candidate);
 		}
 		
 		view.setTextSize(TypedValue.COMPLEX_UNIT_PX,newSize);
 		
+	}
+	
+	private float getMaximumTextSize(TextView view, String word){
+		float lowFence = 0;
+		float highFence = 2000;
+		float candidate = lowFence;
+		float last = highFence;
+		float width = view.getWidth();
+		
+		
+		while ((Math.abs(candidate - last) / (candidate + last) > .05) ){
+			last = candidate;
+			candidate = (lowFence + highFence) / 2;
+			view.setTextSize(TypedValue.COMPLEX_UNIT_PX,candidate);
+			if (view.getPaint().measureText(word) > width){
+				//too wide
+				highFence = candidate;
+			} else {
+				//not too wide
+				lowFence = candidate;
+			}
+		}
+		return candidate; 
 	}
 	
 	protected void cycleWords() {

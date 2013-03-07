@@ -1,8 +1,8 @@
-package com.pjbsoftware.android.CarMunicator;
+package com.pjbsoftware.android.CarMunicatorLibrary;
 
-import com.pjbsoftware.android.CarMunicator.R;
-import com.pjbsoftware.android.CarMunicator.Message;
-import com.pjbsoftware.android.CarMunicator.MessageDBHelper;
+import com.pjbsoftware.android.CarMunicatorLibrary.R;
+import com.pjbsoftware.android.CarMunicatorLibrary.Message;
+import com.pjbsoftware.android.CarMunicatorLibrary.MessageDBHelper;
 
 import android.app.Activity;
 import android.content.Intent;

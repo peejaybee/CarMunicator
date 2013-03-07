@@ -1,11 +1,12 @@
-package com.pjbsoftware.android.CarMunicator;
+package com.pjbsoftware.android.CarMunicatorLibrary;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.Cursor;
 import android.content.ContentValues;
-import com.pjbsoftware.android.CarMunicator.Message;
+
+import com.pjbsoftware.android.CarMunicatorLibrary.Message;
 
 public class MessageDBHelper extends SQLiteOpenHelper {
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">CarMunicator</string>
+    <string name="app_name">CarMunicatorLibrary</string>
     <string name="preload1">Thanks</string>
     <string name="preload2">a</string>
     <string name="preload3">Signal</string>

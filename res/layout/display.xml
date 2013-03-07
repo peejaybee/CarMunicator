@@ -8,6 +8,7 @@
         android:id="@+id/txtDisplay"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:layout_gravity="center"
         android:gravity="center"
         android:lines="1"
         android:textSize="50sp" />

@@ -1,19 +1,19 @@
-package com.pjbsoftware.android.CarMunicator;
+package com.pjbsoftware.android.CarMunicatorLibrary;
 
 import android.provider.BaseColumns;
 import android.content.ContentValues;
 
 public class Message implements BaseColumns {
 	public static final int NUMBER_OF_MESSAGES = 6;
-	public static final String mInitialCaptions[] = { "Thanks", "Thank yoooo",
-			"Signal", "Too Close", "Sorry!", "Now You Find It" };
+	public static final String mInitialCaptions[] = { "Thanks", "HELP",
+			"Nice car!", "Sorry!", "Gas Cap Open", "Turn Signal On" };
 
 	public static final String mInitialTexts[] = { "Thanks!",
-			"All I wanna do is to thank youuuu",
-			"That flippy bit on the steering column is the TURN SIGNAL",
-			"I\'m sorry, have we been introduced?",
-			"Sorry about that -- my fault!",
-			"Now that I've passed you, you find the accelerator!" };
+			"911 SEND HELP CALL",
+			"Nice car!",
+			"I'm sorry about that!",
+			"Your gas cap is open!",
+			"Your turn signal is still on" };
 
 	public static final String CAPTION = "MessageCaption";
 	public static final String TEXT = "MessageText";

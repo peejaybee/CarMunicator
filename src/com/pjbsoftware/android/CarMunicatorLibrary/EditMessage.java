@@ -1,6 +1,6 @@
-package com.pjbsoftware.android.CarMunicator;
+package com.pjbsoftware.android.CarMunicatorLibrary;
 
-import com.pjbsoftware.android.CarMunicator.R;
+import com.pjbsoftware.android.CarMunicatorLibrary.R;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,8 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Button;
-import com.pjbsoftware.android.CarMunicator.MessageDBHelper;
-import com.pjbsoftware.android.CarMunicator.Message;
+
+import com.pjbsoftware.android.CarMunicatorLibrary.Message;
+import com.pjbsoftware.android.CarMunicatorLibrary.MessageDBHelper;
 
 public class EditMessage extends Activity implements View.OnClickListener {
 	private Message myMessage;
