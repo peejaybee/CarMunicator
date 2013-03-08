@@ -9,11 +9,8 @@ public class Message implements BaseColumns {
 			"Nice car!", "Sorry!", "Gas Cap Open", "Turn Signal On" };
 
 	public static final String mInitialTexts[] = { "Thanks!",
-			"911 SEND HELP CALL",
-			"Nice car!",
-			"I'm sorry about that!",
-			"Your gas cap is open!",
-			"Your turn signal is still on" };
+			"CALL 911 SEND HELP", "Nice car!", "I'm sorry about that!",
+			"Your gas cap is open!", "Your turn signal is still on!" };
 
 	public static final String CAPTION = "MessageCaption";
 	public static final String TEXT = "MessageText";

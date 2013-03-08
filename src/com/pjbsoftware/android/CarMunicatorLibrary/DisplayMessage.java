@@ -1,18 +1,13 @@
 package com.pjbsoftware.android.CarMunicatorLibrary;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Rect;
-import android.os.Bundle;
-import android.text.TextPaint;
-import android.util.TypedValue;
-import android.widget.TextView;
-
-import java.lang.String;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import com.pjbsoftware.android.CarMunicatorLibrary.R;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.TypedValue;
+import android.widget.TextView;
 
 public class DisplayMessage extends Activity {
 	
@@ -63,21 +58,17 @@ public class DisplayMessage extends Activity {
 			candidate = getMaximumTextSize(view,words[i]);
 			newSize = Math.min(newSize,candidate);
 		}
-		
-		view.setTextSize(TypedValue.COMPLEX_UNIT_PX,newSize);
-		
+		view.setTextSize(TypedValue.COMPLEX_UNIT_PX,newSize);		
 	}
 	
 	private float getMaximumTextSize(TextView view, String word){
 		float lowFence = 0;
 		float highFence = 2000;
 		float candidate = lowFence;
-		float last = highFence;
-		float width = view.getWidth();
+		float width = view.getWidth() - view.getPaddingRight() - view.getPaddingLeft();
 		
 		
-		while ((Math.abs(candidate - last) / (candidate + last) > .05) ){
-			last = candidate;
+		while ((Math.abs(highFence - lowFence) / (highFence + lowFence) > .05) ){
 			candidate = (lowFence + highFence) / 2;
 			view.setTextSize(TypedValue.COMPLEX_UNIT_PX,candidate);
 			if (view.getPaint().measureText(word) > width){
@@ -88,7 +79,7 @@ public class DisplayMessage extends Activity {
 				lowFence = candidate;
 			}
 		}
-		return candidate; 
+		return lowFence; 
 	}
 	
 	protected void cycleWords() {
