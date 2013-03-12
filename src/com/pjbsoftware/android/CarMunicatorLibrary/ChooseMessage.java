@@ -70,7 +70,7 @@ public class ChooseMessage extends FragmentActivity implements View.OnClickListe
 			myInt.putExtra(Message._ID, id);
 			startActivity(myInt);
 		}
-		return false;
+		return true;
 	}
 
 	@Override

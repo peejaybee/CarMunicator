@@ -19,7 +19,6 @@ public class FullVersionOnlyDialog extends DialogFragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		
 		View view = inflater.inflate(R.layout.fullversiononlydialog, container);
-//		TextView mPitch = (TextView) view.findViewById(R.id.txtPitch);
 		getDialog().setTitle(R.string.strBuyDialogTitle);
 		
 		Button btnCancel = (Button) view.findViewById(R.id.btnCancel);
@@ -30,7 +29,7 @@ public class FullVersionOnlyDialog extends DialogFragment {
 		});
 		
 		Button btnBuy = (Button) view.findViewById(R.id.btnBuy);
-		btnCancel.setOnClickListener(new OnClickListener() {
+		btnBuy.setOnClickListener(new OnClickListener() {
 			public void onClick(View v){
 				try{
 					startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("market://details?id=com.pjbsoftware.carmunicatorfull")));
