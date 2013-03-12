@@ -9,7 +9,7 @@
             <Button android:id="@+id/button1" android:layout_height="fill_parent" android:layout_width="fill_parent" android:text="@string/preload1" android:layout_weight="1"></Button>
         </TableRow>
         <TableRow android:id="@+id/tableRow2" android:layout_width="fill_parent" android:layout_height="fill_parent">
-            <Button android:text="@string/preload2" android:layout_height="fill_parent" android:layout_width="fill_parent" android:id="@+id/button2" android:layout_weight="1"></Button>
+            <Button android:text="@string/preload2" android:layout_height="fill_parent" android:layout_width="fill_parent" android:id="@+id/btnBuy" android:layout_weight="1"></Button>
         </TableRow>
         <TableRow android:id="@+id/tableRow3" android:layout_width="fill_parent" android:layout_height="fill_parent">
             <Button android:id="@+id/button3" android:layout_height="fill_parent" android:layout_width="fill_parent" android:text="@string/preload3" android:layout_weight="1"></Button>

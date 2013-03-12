@@ -1,18 +1,32 @@
 package com.pjbsoftware.android.CarMunicatorLibrary;
 
+
 import com.pjbsoftware.android.CarMunicatorLibrary.R;
 import com.pjbsoftware.android.CarMunicatorLibrary.Message;
 import com.pjbsoftware.android.CarMunicatorLibrary.MessageDBHelper;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
-public class ChooseMessage extends Activity implements View.OnClickListener,
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+
+
+public class ChooseMessage extends FragmentActivity implements View.OnClickListener,
 		View.OnLongClickListener {
-	private int buttonID[] = { R.id.button1, R.id.button2, R.id.button3,
+	
+	private static final int FULL_VERSION_REQUIRED = 1; 
+
+	private int buttonID[] = { R.id.button1, R.id.btnBuy, R.id.button3,
 			R.id.button4, R.id.button5, R.id.button6 };
 
 	public void onCreate(Bundle savedInstanceState) {
@@ -43,15 +57,19 @@ public class ChooseMessage extends Activity implements View.OnClickListener,
 
 	public boolean onLongClick(View v) {
 		int id = 0;
-		for (int i = 0; i < 6; i++) {
-			if (buttonID[i] == v.getId()) {
-				id = i;
+		if (isLiteVersion()) {
+			showDialog(); 
+		}else{
+			for (int i = 0; i < 6; i++) {
+				if (buttonID[i] == v.getId()) {
+					id = i;
+				}
 			}
+			Intent myInt = new Intent();
+			myInt.setClass(this, EditMessage.class);
+			myInt.putExtra(Message._ID, id);
+			startActivity(myInt);
 		}
-		Intent myInt = new Intent();
-		myInt.setClass(this, EditMessage.class);
-		myInt.putExtra(Message._ID, id);
-		startActivity(myInt);
 		return false;
 	}
 
@@ -65,5 +83,16 @@ public class ChooseMessage extends Activity implements View.OnClickListener,
 			thisButton.setText(captions[i]);
 		}
 
+	}
+	
+	private void showDialog(){
+	    FragmentManager fm = getSupportFragmentManager();
+	    FullVersionOnlyDialog fvod = new FullVersionOnlyDialog();
+	    fvod.show(fm,"fullversiononly");
+
+	}
+	
+	 	public boolean isLiteVersion(){
+		return ((CarMunicatorLibraryApplication)getApplication()).isLiteVersion();
 	}
 }

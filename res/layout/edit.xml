@@ -6,7 +6,7 @@
     <EditText android:layout_width="fill_parent" android:text="" android:layout_height="wrap_content" android:id="@+id/txtDescription" android:hint="@string/strDescriptionHint"></EditText>
     <EditText android:layout_width="fill_parent" android:text="" android:layout_height="wrap_content" android:id="@+id/txtMessage" android:hint="@string/strMessageHint"></EditText>
     <LinearLayout android:id="@+id/linearLayout1" android:layout_height="wrap_content" android:layout_width="fill_parent">
-        <Button android:layout_height="wrap_content" android:id="@+id/btnOK" android:text="@string/strOK" android:layout_width="wrap_content" android:clickable="true" android:enabled="true"></Button>
-        <Button android:text="@string/strCancel" android:id="@+id/btnCancel" android:layout_height="fill_parent" android:layout_width="wrap_content" android:clickable="true" android:enabled="true"></Button>
+                <Button android:text="@string/strCancel" android:id="@+id/btnCancel" android:layout_height="fill_parent" android:layout_width="wrap_content" android:clickable="true" android:enabled="true"></Button>
+				<Button android:layout_height="wrap_content" android:id="@+id/btnOK" android:text="@string/strOK" android:layout_width="wrap_content" android:clickable="true" android:enabled="true"></Button>
     </LinearLayout>
 </LinearLayout>

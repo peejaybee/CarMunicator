@@ -3,14 +3,14 @@
       android:versionCode="1"
       android:versionName="1.0" package="com.pjbsoftware.android.CarMunicatorLibrary">
     <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="17"/>
-    <application android:icon="@drawable/icon" android:label="@string/app_name" android:allowBackup="true" android:name="CarMunicatorLibraryApplication">
-        <activity android:label="@string/app_name" android:name="ChooseMessage" android:screenOrientation="unspecified">
+    <application android:icon="@drawable/icon" android:label="@string/strAppName" android:allowBackup="true" android:name="CarMunicatorLibraryApplication">
+        <activity android:name="com.pjbsoftware.android.CarMunicatorLibrary.ChooseMessage" android:label="@string/strAppName" android:screenOrientation="unspecified">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="DisplayMessage" android:screenOrientation="landscape" android:exported="false" android:excludeFromRecents="true" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"></activity>
+        <activity android:name="com.pjbsoftware.android.CarMunicatorLibrary.DisplayMessage" android:screenOrientation="landscape" android:exported="false" android:excludeFromRecents="true" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"></activity>
         <activity android:name="com.pjbsoftware.android.CarMunicatorLibrary.EditMessage"></activity>
 
     </application>

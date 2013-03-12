@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">CarMunicatorLibrary</string>
+    <string name="strAppName">CarMunicatorLibrary</string>
+    <string name="strFullAppName">CarMunicator Full</string>
     <string name="preload1">Thanks</string>
     <string name="preload2">a</string>
     <string name="preload3">Signal</string>
@@ -9,6 +10,9 @@
     <string name="preload6">c</string>
     <string name="strOK">OK</string>
     <string name="strCancel">Cancel</string>
+	<string name="strBuy">Buy</string>
     <string name="strDescriptionHint">Short Description</string>
     <string name="strMessageHint">Message Text</string>
+	<string name="buy_pitch">You need to buy the full version to do this.</string>
+	<string name="strBuyDialogTitle">Full Version Required</string>
 </resources>
