@@ -1,31 +1,19 @@
 package com.pjbsoftware.android.CarMunicatorLibrary;
 
-
-import com.pjbsoftware.android.CarMunicatorLibrary.R;
-import com.pjbsoftware.android.CarMunicatorLibrary.Message;
-import com.pjbsoftware.android.CarMunicatorLibrary.MessageDBHelper;
-
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+public class ChooseMessage extends Activity implements
+		View.OnClickListener, View.OnLongClickListener {
 
-
-public class ChooseMessage extends FragmentActivity implements View.OnClickListener,
-		View.OnLongClickListener {
+	private String mPackageNameFullVersion = "com.pjbsoftware.carmunicatorfull";
 	
-	private static final int FULL_VERSION_REQUIRED = 1; 
-
 	private int buttonID[] = { R.id.button1, R.id.btnBuy, R.id.button3,
 			R.id.button4, R.id.button5, R.id.button6 };
 
@@ -58,8 +46,8 @@ public class ChooseMessage extends FragmentActivity implements View.OnClickListe
 	public boolean onLongClick(View v) {
 		int id = 0;
 		if (isLiteVersion()) {
-			showDialog(); 
-		}else{
+			showDialog();
+		} else {
 			for (int i = 0; i < 6; i++) {
 				if (buttonID[i] == v.getId()) {
 					id = i;
@@ -84,15 +72,39 @@ public class ChooseMessage extends FragmentActivity implements View.OnClickListe
 		}
 
 	}
-	
-	private void showDialog(){
-	    FragmentManager fm = getSupportFragmentManager();
-	    FullVersionOnlyDialog fvod = new FullVersionOnlyDialog();
-	    fvod.show(fm,"fullversiononly");
 
+	private void showDialog() {
+		AlertDialog.Builder adb = new AlertDialog.Builder(this);
+		adb.setTitle(R.string.strBuyDialogTitle)
+				.setCancelable(true)
+				.setMessage(R.string.buy_pitch)
+				.setPositiveButton(R.string.strBuy,
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface di, int id) {
+								try {
+									startActivity(new Intent(
+											Intent.ACTION_VIEW,
+											Uri.parse("market://details?id=" + mPackageNameFullVersion)));
+								} finally {
+									startActivity(new Intent(
+											Intent.ACTION_VIEW,
+											Uri.parse("market://details?id=" + mPackageNameFullVersion)));
+								}
+								di.dismiss();
+							}
+						})
+				.setNegativeButton(R.string.strCancel,
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface di, int id) {
+								di.dismiss();
+							}
+						});
+		AlertDialog ad = adb.create();
+		ad.show();
 	}
-	
-	 	public boolean isLiteVersion(){
-		return ((CarMunicatorLibraryApplication)getApplication()).isLiteVersion();
+
+	public boolean isLiteVersion() {
+		return ((CarMunicatorLibraryApplication) getApplication())
+				.isLiteVersion();
 	}
 }
