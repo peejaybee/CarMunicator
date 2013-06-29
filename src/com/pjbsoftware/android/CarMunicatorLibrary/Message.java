@@ -5,11 +5,11 @@ import android.content.ContentValues;
 
 public class Message implements BaseColumns {
 	public static final int NUMBER_OF_MESSAGES = 6;
-	public static final String mInitialCaptions[] = { "Thanks", "HELP",
-			"Nice car!", "Sorry!", "Gas Cap Open", "Turn Signal On" };
+	public static final String mInitialCaptions[] = { "HELP", "Low Tire", 
+			"Brake Lights", "Sorry!", "Gas Cap Open", "Turn Signal On" };
 
-	public static final String mInitialTexts[] = { "Thanks!",
-			"CALL 911 SEND HELP", "Nice car!", "I'm sorry about that!",
+	public static final String mInitialTexts[] = { "CALL 911 SEND HELP", "You have a low tire!",
+			 "Check your brake lights!", "I'm sorry about that!",
 			"Your gas cap is open!", "Your turn signal is still on!" };
 
 	public static final String CAPTION = "MessageCaption";
